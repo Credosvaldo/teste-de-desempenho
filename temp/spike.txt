@@ -1,0 +1,41 @@
+php@php-Dell-G15-5520:~/MinhasCoisas/Workspace/puc/atividades/testes/teste-de-desempenho/atividade/test$ k6 run spike.js
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: spike.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 300 max VUs, 2m10s max duration (incl. graceful stop):
+              * default: Up to 300 looping VUs for 1m40s over 4 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration..............: avg=201.81ms min=99.17ms med=201.32ms max=338.45ms p(90)=282.1ms p(95)=292.2ms 
+      { expected_response:true }...: avg=201.81ms min=99.17ms med=201.32ms max=338.45ms p(90)=282.1ms p(95)=292.2ms 
+    http_req_failed................: 0.00% 0 out of 97695
+    http_reqs......................: 97695 974.017323/s
+
+    EXECUTION
+    iteration_duration.............: avg=201.9ms  min=99.3ms  med=201.4ms  max=338.56ms p(90)=282.2ms p(95)=292.32ms
+    iterations.....................: 97695 974.017323/s
+    vus............................: 300   min=1          max=300
+    vus_max........................: 300   min=300        max=300
+
+    NETWORK
+    data_received..................: 29 MB 288 kB/s
+    data_sent......................: 10 MB 102 kB/s
+
+
+
+
+running (1m40.3s), 000/300 VUs, 97695 complete and 0 interrupted iterations
+default ✓ [======================================] 000/300 VUs  1m40s
+php@php-Dell-G15-5520:~/MinhasCoisas/Workspace/puc/atividades/testes/teste-de-desempenho/atividade/test$ 

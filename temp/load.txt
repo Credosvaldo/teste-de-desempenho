@@ -1,0 +1,56 @@
+php@php-Dell-G15-5520:~/MinhasCoisas/Workspace/puc/atividades/testes/teste-de-desempenho/atividade/test$ k6 run load.js 
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: load.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 50 max VUs, 4m0s max duration (incl. graceful stop):
+              * default: Up to 50 looping VUs for 3m30s over 3 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(95)<500' p(95)=291.31ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 41074   195.452582/s
+    checks_succeeded...: 100.00% 41074 out of 41074
+    checks_failed......: 0.00%   0 out of 41074
+
+    ✓ status é 201
+
+    HTTP
+    http_req_duration..............: avg=201.11ms min=99.22ms med=201.29ms max=303.29ms p(90)=281.64ms p(95)=291.31ms
+      { expected_response:true }...: avg=201.11ms min=99.22ms med=201.29ms max=303.29ms p(90)=281.64ms p(95)=291.31ms
+    http_req_failed................: 0.00%  0 out of 41074
+    http_reqs......................: 41074  195.452582/s
+
+    EXECUTION
+    iteration_duration.............: avg=201.31ms min=99.4ms  med=201.5ms  max=303.43ms p(90)=281.84ms p(95)=291.51ms
+    iterations.....................: 41074  195.452582/s
+    vus............................: 1      min=1          max=50
+    vus_max........................: 50     min=50         max=50
+
+    NETWORK
+    data_received..................: 12 MB  58 kB/s
+    data_sent......................: 4.3 MB 21 kB/s
+
+
+
+
+running (3m30.1s), 00/50 VUs, 41074 complete and 0 interrupted iterations
+default ✓ [======================================] 00/50 VUs  3m30s
+php@php-Dell-G15-5520:~/MinhasCoisas/Workspace/puc/atividades/testes/teste-de-desempenho/atividade/test$ 

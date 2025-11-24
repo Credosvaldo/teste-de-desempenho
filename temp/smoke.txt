@@ -1,0 +1,47 @@
+php@php-Dell-G15-5520:~/MinhasCoisas/Workspace/puc/atividades/testes/teste-de-desempenho/atividade/test$ k6 run smoke.js 
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: smoke.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1 max VUs, 1m0s max duration (incl. graceful stop):
+              * default: Up to 1 looping VUs for 30s over 1 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 55047   1834.873402/s
+    checks_succeeded...: 100.00% 55047 out of 55047
+    checks_failed......: 0.00%   0 out of 55047
+
+    ✓ status is 200
+
+    HTTP
+    http_req_duration..............: avg=440.01µs min=52.55µs med=370.4µs  max=6.05ms p(90)=804.53µs p(95)=914.63µs
+      { expected_response:true }...: avg=440.01µs min=52.55µs med=370.4µs  max=6.05ms p(90)=804.53µs p(95)=914.63µs
+    http_req_failed................: 0.00%  0 out of 55047
+    http_reqs......................: 55047  1834.873402/s
+
+    EXECUTION
+    iteration_duration.............: avg=533.33µs min=64.48µs med=462.37µs max=6.3ms  p(90)=958.13µs p(95)=1.09ms  
+    iterations.....................: 55047  1834.873402/s
+    vus............................: 1      min=1          max=1
+    vus_max........................: 1      min=1          max=1
+
+    NETWORK
+    data_received..................: 16 MB  530 kB/s
+    data_sent......................: 4.2 MB 140 kB/s
+
+
+
+
+running (0m30.0s), 0/1 VUs, 55047 complete and 0 interrupted iterations
+default ✓ [======================================] 0/1 VUs  30s
+php@php-Dell-G15-5520:~/MinhasCoisas/Workspace/puc/atividades/testes/teste-de-desempenho/atividade/test$ 
